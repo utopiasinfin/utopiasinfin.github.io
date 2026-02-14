@@ -55,11 +55,13 @@
     .grid{display:grid; grid-template-columns:1.2fr .8fr; gap:16px; margin-top:26px}
     @media (max-width:900px){.grid{grid-template-columns:1fr}}
     .card{
-      background:rgba(15,22,35,.72);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:18px 18px;
-      box-shadow:var(--shadow);
+     position: relative;
+     z-index: 1;
+     background:rgba(15,22,35,.72);
+     border:1px solid var(--border);
+     border-radius:var(--radius);
+     padding:18px 18px;
+     box-shadow:var(--shadow);
     }
     .card h2{margin:0 0 10px 0; font-size:16px; text-transform:uppercase; letter-spacing:.12em; color:#cfe7ff}
     .muted{color:var(--muted)}
@@ -73,7 +75,33 @@
     .project{padding:10px 0}
     .project strong{display:block}
     code{background:rgba(125,211,252,.08); border:1px solid rgba(125,211,252,.18); padding:2px 6px; border-radius:8px}
-  </style>
+    
+    /* Bubbles nur im Hintergrund (hinter den Cards, nicht im Content) */
+    body::before{
+    content:"";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: .8;
+    background:
+    radial-gradient(circle at 10% 110%, rgba(125,211,252,.10) 0 10px, transparent 11px),
+    radial-gradient(circle at 25% 120%, rgba(125,211,252,.08) 0 14px, transparent 15px),
+    radial-gradient(circle at 45% 115%, rgba(125,211,252,.09) 0 9px,  transparent 10px),
+    radial-gradient(circle at 60% 130%, rgba(125,211,252,.07) 0 16px, transparent 17px),
+    radial-gradient(circle at 80% 125%, rgba(125,211,252,.08) 0 12px, transparent 13px),
+    radial-gradient(circle at 92% 118%, rgba(125,211,252,.06) 0 18px, transparent 19px);
+    animation: bubblesFloat 24s linear infinite;
+   }
+
+    @keyframes bubblesFloat{
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-18%); }
+   }
+
+    /* Dein Inhalt über dem Hintergrund */
+    .wrap{ position: relative; z-index: 1; }
+   </style>
 </head>
 
 <body>
