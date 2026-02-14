@@ -3,12 +3,146 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Wilson Escobar Rodriguez – Portfolio</title>
+  <title>Wilson Escobar Rodriguez – IT-Portfolio</title>
+  <meta name="description" content="IT-Portfolio von Wilson Escobar Rodriguez (Fachinformatiker Systemintegration, Berlin). Linux, Netzwerke, GitHub-Projekte." />
+
+  <!-- JetBrains Mono (CDN) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b0f14; --panel:#0f1623; --border:#223042;
+      --text:#e6edf3; --muted:#a7b3c2; --accent:#7dd3fc;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      background: radial-gradient(900px 600px at 20% 0%, #14223a 0%, var(--bg) 60%) no-repeat, var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px; margin:0 auto; padding:56px 20px}
+    header{display:flex; gap:18px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap}
+    .title h1{margin:0; font-size:34px; letter-spacing:.2px}
+    .title p{margin:8px 0 0 0; color:var(--muted)}
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px}
+    .chip{border:1px solid var(--border); background:rgba(15,22,35,.55); padding:6px 10px; border-radius:999px; font-size:13px; color:var(--muted)}
+    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(15,22,35,.9), rgba(15,22,35,.6));
+      padding:10px 14px; border-radius:12px;
+      box-shadow:var(--shadow);
+      color:var(--text);
+    }
+    .btn:hover{border-color:#2f425c}
+    .grid{display:grid; grid-template-columns:1.2fr .8fr; gap:16px; margin-top:26px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{
+      background:rgba(15,22,35,.72);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:18px 18px;
+      box-shadow:var(--shadow);
+    }
+    .card h2{margin:0 0 10px 0; font-size:16px; text-transform:uppercase; letter-spacing:.12em; color:#cfe7ff}
+    .muted{color:var(--muted)}
+    ul{margin:10px 0 0 20px; padding:0}
+    li{margin:6px 0}
+    .two{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    @media (max-width:700px){.two{grid-template-columns:1fr}}
+    footer{margin-top:22px; color:var(--muted); font-size:13px}
+    .kicker{font-size:12px; text-transform:uppercase; letter-spacing:.14em; color:var(--muted)}
+    .sep{height:1px; background:rgba(34,48,66,.8); margin:14px 0}
+    .project{padding:10px 0}
+    .project strong{display:block}
+    code{background:rgba(125,211,252,.08); border:1px solid rgba(125,211,252,.18); padding:2px 6px; border-radius:8px}
+  </style>
 </head>
+
 <body>
-  <h1>Wilson Escobar Rodriguez</h1>
-  <p>Umschüler Fachinformatiker Systemintegration (IHK) · Cimdata Bildungsakademie GmbH-Berlin</p>
-  <p>GitHub: <a href="https://github.com/utopiasinfin">github.com/utopiasinfin</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/wilson-escobar-rodriguez-5b5845323/">linkedin.com/in/wilson-escobar-rodriguez-5b5845323</a></p>
+  <main class="wrap">
+    <header>
+      <div class="title">
+        <div class="kicker">IT-Portfolio</div>
+        <h1>Wilson Escobar Rodriguez</h1>
+        <p>Umschüler Fachinformatiker Systemintegration (IHK) · Berlin · Fokus: Linux & Netzwerke</p>
+
+        <div class="chips">
+          <span class="chip">Linux</span>
+          <span class="chip">Networking</span>
+          <span class="chip">Git/GitHub</span>
+          <span class="chip">Virtualisierung</span>
+          <span class="chip">Troubleshooting</span>
+        </div>
+
+        <div class="cta">
+          <a class="btn" href="https://github.com/utopiasinfin" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/wilson-escobar-rodriguez-5b5845323/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <!-- CV: wir fügen die Datei gleich hinzu -->
+          <a class="btn" href="./cv/" >Lebenslauf (PDF)</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Über mich</h2>
+        <p class="muted">
+          Ich baue praxisnahe Lern- und Lab-Projekte rund um Linux-Systeme und Netzwerke.
+          Mein Ziel: solide Grundlagen, saubere Dokumentation und nachvollziehbare Lösungen – Schritt für Schritt.
+        </p>
+        <div class="sep"></div>
+
+        <h2>Projekte</h2>
+
+        <div class="project">
+          <strong>Subnetting (Python)</strong>
+          <div class="muted">Übungen & Tools zum Rechnen und Verstehen von IPv4-Subnetzen.</div>
+          <div><a href="https://github.com/utopiasinfin/subnetting" target="_blank" rel="noreferrer">Repo ansehen</a></div>
+        </div>
+
+        <div class="project">
+          <strong>Homelab: Dienste & Netzwerk</strong>
+          <div class="muted">DNS, Server-Services, Tests, Monitoring (Dokumentation folgt).</div>
+          <div class="muted">Technik-Stack: <code>Debian</code> · <code>BIND</code> · <code>SSH</code> · <code>LAN</code></div>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h2>Skills</h2>
+        <ul>
+          <li>Linux: CLI, Services, Rechte, Logs</li>
+          <li>Netzwerk: IPv4, Subnetting, Routing, VLAN-Basics</li>
+          <li>Tools: Git, Wireshark (Basics), QEMU/KVM (Basics)</li>
+        </ul>
+
+        <div class="sep"></div>
+
+        <h2>Kontakt</h2>
+        <ul>
+          <li><a href="mailto:escobarrodriguezwilson@gmail.com">escobarrodriguezwilson@gmail.com</a></li>
+          <li><a href="https://github.com/utopiasinfin" target="_blank" rel="noreferrer">github.com/utopiasinfin</a></li>
+          <li><a href="https://www.linkedin.com/in/wilson-escobar-rodriguez-5b5845323/" target="_blank" rel="noreferrer">linkedin.com/in/…</a></li>
+        </ul>
+
+        <footer>
+          <div>© <span id="y"></span> Wilson Escobar Rodriguez</div>
+        </footer>
+      </aside>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
