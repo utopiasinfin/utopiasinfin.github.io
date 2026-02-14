@@ -28,8 +28,14 @@
     }
     a{color:var(--accent); text-decoration:none}
     a:hover{text-decoration:underline}
-    .wrap{max-width:980px; margin:0 auto; padding:56px 20px}
-    header{display:flex; gap:18px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap}
+    .wrap{
+      width:min(1400px, 100%);
+      margin:0 auto;
+      padding: clamp(28px, 4vw, 56px) clamp(16px, 3vw, 32px);
+    }
+    
+
+     header{display:flex; gap:18px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap}
     .title h1{margin:0; font-size:34px; letter-spacing:.2px}
     .title p{margin:8px 0 0 0; color:var(--muted)}
     .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px}
