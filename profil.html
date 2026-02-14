@@ -52,22 +52,48 @@
       color:var(--text);
     }
     .row{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .profile-hero{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:18px;
+    flex-wrap:wrap;
+   }
+
+   .profile-photo{
+   width: 220px;
+   max-width: 40vw;
+   aspect-ratio: 1 / 1;
+   object-fit: cover;
+   border-radius: 14px;
+   border: 1px solid var(--border);
+   box-shadow: var(--shadow);
+   background: rgba(15,22,35,.72);
+  }
+
+   @media (max-width:700px){
+   .profile-photo{ width: 180px; }
+  }
   </style>
 </head>
 
 <body>
   <main class="wrap">
     <div class="card">
-      <div class="kicker">Profil</div>
-      <h1>Wilson Escobar Rodriguez</h1>
-      <p class="muted">Umschüler Fachinformatiker Systemintegration (IHK) · Berlin</p>
+	<div class="profile-hero">
+    <div>
+        <div class="kicker">Profil</div>
+         <h1>Wilson Escobar Rodriguez</h1>
+         <p class="muted">Umschüler Fachinformatiker Systemintegration (IHK) · Berlin</p>
+   </div>
+       <img class="profile-photo" src="./assets/img/profil.jpg" alt="Profilfoto von Wilson Escobar Rodriguez" loading="lazy">
+   </div>
 
       <div class="row">
         <a class="btn" href="./index.html">← Zur Startseite</a>
         <a class="btn" href="./cv/cv.pdf" target="_blank" rel="noreferrer">Lebenslauf (PDF)</a>
         <a class="btn" href="./cv/zwischenzeugnis.pdf" target="_blank" rel="noreferrer">Zwischenzeugnis (PDF)</a>
       </div>
-
       <h2>Deutsch</h2>
       <p>
         Ich heiße Wilson Escobar Rodriguez und absolviere seit Januar 2025 eine Umschulung zum Fachinformatiker für
