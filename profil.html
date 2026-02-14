@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profil – Wilson Escobar Rodriguez</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b0f14; --panel:#0f1623; --border:#223042;
+      --text:#e6edf3; --muted:#a7b3c2; --accent:#7dd3fc;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      background: radial-gradient(900px 600px at 20% 0%, #14223a 0%, var(--bg) 60%) no-repeat, var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{
+      width:min(1400px, 100%);
+      margin:0 auto;
+      padding: clamp(28px, 4vw, 56px) clamp(16px, 3vw, 32px);
+    }
+    .card{
+      background:rgba(15,22,35,.72);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+      max-width: 980px;
+    }
+    .kicker{font-size:12px; text-transform:uppercase; letter-spacing:.14em; color:var(--muted)}
+    h1{margin:6px 0 0 0; font-size:30px}
+    h2{margin:22px 0 10px 0; font-size:16px; text-transform:uppercase; letter-spacing:.12em; color:#cfe7ff}
+    .muted{color:var(--muted)}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(15,22,35,.9), rgba(15,22,35,.6));
+      padding:10px 14px; border-radius:12px;
+      box-shadow:var(--shadow);
+      color:var(--text);
+    }
+    .row{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <div class="card">
+      <div class="kicker">Profil</div>
+      <h1>Wilson Escobar Rodriguez</h1>
+      <p class="muted">Umschüler Fachinformatiker Systemintegration (IHK) · Berlin</p>
+
+      <div class="row">
+        <a class="btn" href="./index.html">← Zur Startseite</a>
+        <a class="btn" href="./cv/cv.pdf" target="_blank" rel="noreferrer">Lebenslauf (PDF)</a>
+        <a class="btn" href="./cv/zwischenzeugnis.pdf" target="_blank" rel="noreferrer">Zwischenzeugnis (PDF)</a>
+      </div>
+
+      <h2>Deutsch</h2>
+      <p>
+        Ich heiße Wilson Escobar Rodriguez und absolviere seit Januar 2025 eine Umschulung zum Fachinformatiker für
+        Systemintegration bei der Cimdata Bildungsakademie GmbH in Berlin. Nach vielen Jahren Berufserfahrung in der
+        Gastronomie – unter anderem im direkten Kundenkontakt – bringe ich eine starke Service- und Teamorientierung mit.
+        Der Umgang mit Menschen, klare Kommunikation und Zuverlässigkeit gehören für mich zur täglichen Praxis.
+      </p>
+      <p>
+        Informatik hat mich über lange Zeit begleitet, besonders die Installation und Verbindung von Betriebssystemen mit
+        Hardware und Peripherie. Mit Linux habe ich gelernt, ältere Systeme wieder nutzbar zu machen – das fühlt sich oft
+        wie „Technik, die wieder lebt“ an. Aktuell bereite ich mich auf Linux Essentials, CompTIA Network+ sowie die
+        IHK-Prüfungen (Ende 2026) vor. Für mein Pflichtpraktikum suche ich ein Umfeld, in dem ich Theorie in echte Praxis
+        überführen kann – Schritt für Schritt, mit Feedback, und mit Fokus auf Netzwerke, Server und solides Troubleshooting.
+        In meinem Homelab übe ich täglich mit Raspberry Pi und Basis-Services (z. B. DNS/DHCP, einfache Kommunikation im
+        Netzwerk) und dokumentiere meinen Lernfortschritt.
+      </p>
+
+      <h2>English</h2>
+      <p>
+        My name is Wilson Escobar Rodriguez and since January 2025 I have been retraining as an IT Specialist for System
+        Integration (IHK) at Cimdata Bildungsakademie GmbH in Berlin. After many years of professional experience in
+        hospitality and customer-facing roles, I bring strong communication skills, reliability, and a team-oriented mindset.
+        Working with people under real-world pressure taught me structure, responsibility, and service quality.
+      </p>
+      <p>
+        IT has been a long-term interest of mine—especially installing operating systems and connecting them with hardware
+        and peripherals. With Linux, I discovered how powerful it is to bring older machines back to life. I’m currently
+        preparing for Linux Essentials, CompTIA Network+, and the IHK exams (end of 2026). For my mandatory internship,
+        I’m looking for a place where I can turn theory into practice—step by step, with feedback—focused on networks,
+        servers, and solid troubleshooting. In my home lab I practice daily using a Raspberry Pi and core services
+        (e.g., DNS/DHCP and basic network communication) while documenting what I learn.
+      </p>
+    </div>
+  </main>
+</body>
+</html>
