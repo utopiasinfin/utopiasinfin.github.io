@@ -1,0 +1,204 @@
+/* ============================================================
+   Wilson Escobar Rodriguez — IT-Portfolio
+   Design: dunkles Terminal/Editorial-Theme, ein Font (JetBrains Mono),
+   Signatur-Element: live berechnetes "status.sh"-Panel im Hero.
+   ============================================================ */
+
+:root{
+  /* Farben */
+  --bg:        #090d13;
+  --bg-glow:   #142238;
+  --panel:     #101827;
+  --panel-2:   #0c131e;
+  --border:    #223049;
+  --border-soft: rgba(34,48,73,.55);
+  --text:      #e8eef6;
+  --muted:     #93a3b8;
+  --muted-2:   #66768c;
+  --accent:    #7dd3fc;   /* bestehende Markenfarbe – beibehalten */
+  --accent-soft: rgba(125,211,252,.10);
+  --ok:        #34d399;   /* "läuft / aktiv" */
+  --warn:      #f5b94b;   /* Prüfungstermine / Countdown */
+
+  --radius:    16px;
+  --radius-sm: 10px;
+  --shadow:    0 10px 30px rgba(0,0,0,.38);
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+*, *::before, *::after{ box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *, *::before, *::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
+}
+
+body{
+  margin:0;
+  font-family:var(--mono);
+  background:
+    radial-gradient(900px 560px at 15% -10%, var(--bg-glow) 0%, transparent 60%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* sehr feines, statisches Scanline-Raster statt Deko-Blasen — ruhig, on-theme */
+body::before{
+  content:"";
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image: repeating-linear-gradient(
+    to bottom, rgba(125,211,252,.025) 0px, rgba(125,211,252,.025) 1px,
+    transparent 1px, transparent 3px
+  );
+  mix-blend-mode:screen;
+  opacity:.5;
+}
+
+a{ color:var(--accent); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+a:focus-visible, button:focus-visible, .btn:focus-visible{
+  outline:2px solid var(--accent); outline-offset:3px; border-radius:6px;
+}
+
+.wrap{
+  position:relative; z-index:1;
+  width:min(1280px, 100%);
+  margin:0 auto;
+  padding: clamp(24px, 4vw, 52px) clamp(16px, 3vw, 32px) 60px;
+}
+
+/* ---------- Kicker / Überschriften ---------- */
+.kicker{
+  font-size:11px; text-transform:uppercase; letter-spacing:.16em;
+  color:var(--muted-2);
+}
+h1{ margin:6px 0 0; font-size:clamp(28px, 4.4vw, 44px); letter-spacing:.1px; }
+h2{
+  margin:0 0 12px; font-size:13px; text-transform:uppercase;
+  letter-spacing:.14em; color:var(--accent); font-weight:600;
+}
+p{ margin:0 0 12px; }
+.muted{ color:var(--muted); }
+
+/* ---------- Header / Hero ---------- */
+header.hero{
+  display:grid; grid-template-columns:1.3fr 1fr; gap:22px; align-items:stretch;
+}
+@media (max-width:860px){ header.hero{ grid-template-columns:1fr; } }
+
+.title p.role{ margin:10px 0 0; color:var(--muted); max-width:56ch; }
+
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+.chip{
+  border:1px solid var(--border); background:rgba(16,24,39,.6);
+  padding:6px 11px; border-radius:999px; font-size:12.5px; color:var(--muted);
+}
+
+.cta{ display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+.btn{
+  display:inline-flex; align-items:center; gap:9px;
+  border:1px solid var(--border);
+  background:linear-gradient(180deg, rgba(16,24,39,.9), rgba(16,24,39,.55));
+  padding:10px 14px; border-radius:var(--radius-sm);
+  box-shadow:var(--shadow); color:var(--text); font-size:14px;
+  transition:border-color .15s ease, transform .15s ease;
+}
+.btn:hover{ border-color:#33507a; text-decoration:none; transform:translateY(-1px); }
+.icon{ width:17px; height:17px; display:inline-block; vertical-align:middle; }
+
+/* ---------- Terminal-Status-Panel (Signatur-Element) ---------- */
+.term{
+  background:var(--panel-2); border:1px solid var(--border); border-radius:var(--radius);
+  box-shadow:var(--shadow); overflow:hidden; display:flex; flex-direction:column;
+}
+.term-bar{
+  display:flex; align-items:center; gap:8px;
+  padding:10px 14px; border-bottom:1px solid var(--border-soft);
+  font-size:12px; color:var(--muted-2);
+}
+.term-dot{ width:9px; height:9px; border-radius:50%; background:var(--border); }
+.term-title{ margin-left:4px; }
+.term-body{ padding:16px 18px 18px; font-size:13.5px; flex:1; }
+.term-line{ margin:0 0 10px; white-space:pre-wrap; }
+.term-prompt{ color:var(--accent); }
+.term-out{ color:var(--text); padding-left:0; }
+.term-key{ color:var(--muted); }
+.term-val{ color:var(--text); }
+.term-badge{
+  display:inline-block; font-size:11px; padding:1px 7px; border-radius:6px;
+  border:1px solid rgba(52,211,153,.35); color:var(--ok); background:rgba(52,211,153,.08);
+  margin-left:6px;
+}
+.term-badge.warn{ border-color:rgba(245,185,75,.4); color:var(--warn); background:rgba(245,185,75,.08); }
+.cursor{
+  display:inline-block; width:8px; height:1em; background:var(--accent);
+  margin-left:2px; vertical-align:-2px; animation:blink 1s steps(1) infinite;
+}
+@keyframes blink{ 50%{ opacity:0; } }
+
+.term-kv{
+  display:grid; grid-template-columns:auto 1fr; row-gap:9px; column-gap:16px;
+  margin:8px 0 16px; font-size:12.5px;
+}
+.term-kv .term-key{ color:var(--muted); }
+.term-kv .term-val{ color:var(--text); }
+@media (max-width:520px){
+  .term-kv{ grid-template-columns:1fr; row-gap:2px; }
+  .term-kv .term-key{ margin-top:8px; }
+}
+
+/* ---------- Grid / Cards ---------- */
+.grid{ display:grid; grid-template-columns:1.25fr .8fr; gap:16px; margin-top:28px; }
+@media (max-width:900px){ .grid{ grid-template-columns:1fr; } }
+
+.card{
+  position:relative; z-index:1;
+  background:rgba(16,24,39,.72); border:1px solid var(--border);
+  border-radius:var(--radius); padding:20px 20px 22px; box-shadow:var(--shadow);
+}
+.sep{ height:1px; background:var(--border-soft); margin:16px 0; }
+
+/* ---------- Projekt-/Homelab-Karten ---------- */
+.project{ padding:12px 0; border-bottom:1px solid var(--border-soft); }
+.project:last-child{ border-bottom:none; }
+.project-head{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.tag{
+  font-size:10.5px; text-transform:uppercase; letter-spacing:.08em;
+  padding:2px 8px; border-radius:6px; border:1px solid var(--border);
+  color:var(--muted); background:rgba(125,211,252,.05);
+}
+.project strong{ display:block; font-size:15px; margin-top:6px; }
+.project .stack{ margin-top:8px; color:var(--muted); font-size:12.5px; }
+code{
+  background:var(--accent-soft); border:1px solid rgba(125,211,252,.2);
+  padding:2px 6px; border-radius:7px; font-size:12px;
+}
+
+/* ---------- Skills-Liste ---------- */
+ul.skills{ margin:8px 0 0 0; padding:0; list-style:none; }
+ul.skills li{
+  margin:0; padding:9px 0; border-bottom:1px solid var(--border-soft); font-size:13.5px;
+}
+ul.skills li:last-child{ border-bottom:none; }
+ul.skills li b{ color:var(--text); }
+
+/* ---------- Footer ---------- */
+footer.site{ margin-top:26px; color:var(--muted-2); font-size:12.5px; }
+
+/* ---------- Scroll-Reveal ---------- */
+.reveal{ opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease; }
+.reveal.in{ opacity:1; transform:none; }
+
+/* ---------- Profil-Seite ---------- */
+.profile-hero{ display:flex; align-items:flex-start; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+.profile-photo{
+  width:200px; max-width:38vw; aspect-ratio:1/1; object-fit:cover;
+  border-radius:14px; border:1px solid var(--border); box-shadow:var(--shadow);
+  background:var(--panel);
+}
+@media (max-width:700px){ .profile-photo{ width:160px; } }
+.row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+.lang-block h2{ margin-top:28px; }

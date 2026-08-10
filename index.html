@@ -4,217 +4,193 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wilson Escobar Rodriguez – IT-Portfolio</title>
-  <meta name="description" content="IT-Portfolio von Wilson Escobar Rodriguez (Fachinformatiker Systemintegration, Berlin). Linux, Netzwerke, GitHub-Projekte." />
+  <meta name="description" content="IT-Portfolio von Wilson Escobar Rodriguez (Fachinformatiker Systemintegration, Berlin). Linux, Netzwerke, Homelab, GitHub-Projekte." />
 
-  <!-- JetBrains Mono (CDN) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#0b0f14; --panel:#0f1623; --border:#223042;
-      --text:#e6edf3; --muted:#a7b3c2; --accent:#7dd3fc;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius:16px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      background: radial-gradient(900px 600px at 20% 0%, #14223a 0%, var(--bg) 60%) no-repeat, var(--bg);
-      color:var(--text);
-      line-height:1.6;
-    }
-    a{color:var(--accent); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{
-      width:min(1400px, 100%);
-      margin:0 auto;
-      padding: clamp(28px, 4vw, 56px) clamp(16px, 3vw, 32px);
-    }
-    
-
-     header{display:flex; gap:18px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap}
-    .title h1{margin:0; font-size:34px; letter-spacing:.2px}
-    .title p{margin:8px 0 0 0; color:var(--muted)}
-    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px}
-    .chip{border:1px solid var(--border); background:rgba(15,22,35,.55); padding:6px 10px; border-radius:999px; font-size:13px; color:var(--muted)}
-    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
-    .btn{
-      display:inline-flex; align-items:center; gap:10px;
-      border:1px solid var(--border);
-      background:linear-gradient(180deg, rgba(15,22,35,.9), rgba(15,22,35,.6));
-      padding:10px 14px; border-radius:12px;
-      box-shadow:var(--shadow);
-      color:var(--text);
-    }
-    .btn:hover{border-color:#2f425c}
-    .icon{width:18px; height:18px; display:inline-block; vertical-align:middle}
-    .btn{gap:10px}
-    .grid{display:grid; grid-template-columns:1.2fr .8fr; gap:16px; margin-top:26px}
-    @media (max-width:900px){.grid{grid-template-columns:1fr}}
-    .card{
-     position: relative;
-     z-index: 1;
-     background:rgba(15,22,35,.72);
-     border:1px solid var(--border);
-     border-radius:var(--radius);
-     padding:18px 18px;
-     box-shadow:var(--shadow);
-    }
-    .card h2{margin:0 0 10px 0; font-size:16px; text-transform:uppercase; letter-spacing:.12em; color:#cfe7ff}
-    .muted{color:var(--muted)}
-    ul{margin:10px 0 0 20px; padding:0}
-    li{margin:6px 0}
-    .two{display:grid; grid-template-columns:1fr 1fr; gap:12px}
-    @media (max-width:700px){.two{grid-template-columns:1fr}}
-    footer{margin-top:22px; color:var(--muted); font-size:13px}
-    .kicker{font-size:12px; text-transform:uppercase; letter-spacing:.14em; color:var(--muted)}
-    .sep{height:1px; background:rgba(34,48,66,.8); margin:14px 0}
-    .project{padding:10px 0}
-    .project strong{display:block}
-    code{background:rgba(125,211,252,.08); border:1px solid rgba(125,211,252,.18); padding:2px 6px; border-radius:8px}
-    
-    /* Bubbles nur im Hintergrund (hinter den Cards, nicht im Content) */
-    body::before{
-    content:"";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    opacity: .35;
-    background:
-    radial-gradient(circle at 10% 110%, rgba(125,211,252,.10) 0 10px, transparent 11px),
-    radial-gradient(circle at 25% 120%, rgba(125,211,252,.08) 0 14px, transparent 15px),
-    radial-gradient(circle at 45% 115%, rgba(125,211,252,.09) 0 9px,  transparent 10px),
-    radial-gradient(circle at 60% 130%, rgba(125,211,252,.07) 0 16px, transparent 17px),
-    radial-gradient(circle at 80% 125%, rgba(125,211,252,.08) 0 12px, transparent 13px),
-    radial-gradient(circle at 92% 118%, rgba(125,211,252,.06) 0 18px, transparent 19px);
-    animation: bubblesFloat 40s linear infinite;
-   }
-
-    @keyframes bubblesFloat{
-    0%   { transform: translateY(0); }
-    100% { transform: translateY(-18%); }
-   }
-
-    /* Dein Inhalt über dem Hintergrund */
-    .wrap{ position: relative; z-index: 1; }
-   </style>
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-
 <body>
   <main class="wrap">
-    <header>
+
+    <header class="hero">
       <div class="title">
         <div class="kicker">IT-Portfolio</div>
         <h1>Wilson Escobar Rodriguez</h1>
-        <p>Umschüler Fachinformatiker Systemintegration (IHK) · Cimdata Bildungsakademie GmbH Berlin · Fokus: Windows & Linux - Server & Netzwerke</p>
+        <p class="role">Umschüler Fachinformatiker Systemintegration (IHK) · Cimdata Bildungsakademie Berlin · Praktikum im Linux-Team bei Computer Manufaktur GmbH</p>
 
         <div class="chips">
-          <span class="chip">Windows/Windows Server</span>
+          <span class="chip">Windows / Windows Server</span>
           <span class="chip">Linux</span>
           <span class="chip">Networking</span>
+          <span class="chip">Virtualisierung (Proxmox)</span>
+          <span class="chip">Monitoring</span>
           <span class="chip">Git/GitHub</span>
-          <span class="chip">Virtualisierung</span>
           <span class="chip">Troubleshooting</span>
         </div>
 
         <div class="cta">
-            <a class="btn" href="./profil.html">Profil</a>
-            <a class="btn" href="https://github.com/utopiasinfin" target="_blank" rel="noreferrer">
-             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-               <path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.5 4.9 18.5 5.2 18.5 5.2c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/>
-             </svg>
-             GitHub 
-            </a>
-	   <a class="btn" href="https://www.linkedin.com/in/wilson-escobar-rodriguez-5b5845323/" target="_blank" rel="noreferrer">
-  	     <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-    		<path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95v5.66H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.39-1.85 3.62 0 4.29 2.38 4.29 5.47v6.27zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM3.56 20.45h3.56V9H3.56v11.45z"/>
-             </svg>
+          <a class="btn" href="./profil.html">Profil</a>
+          <a class="btn" href="https://github.com/utopiasinfin" target="_blank" rel="noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+              <path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.5 4.9 18.5 5.2 18.5 5.2c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/>
+            </svg>
+            GitHub
+          </a>
+          <a class="btn" href="https://www.linkedin.com/in/wilson-escobar-rodriguez-5b5845323/" target="_blank" rel="noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95v5.66H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.39-1.85 3.62 0 4.29 2.38 4.29 5.47v6.27zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM3.56 20.45h3.56V9H3.56v11.45z"/>
+            </svg>
             LinkedIn
-           </a>
-	   </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Signatur-Element: live berechnetes Status-Panel -->
+      <div class="term">
+        <div class="term-bar">
+          <span class="term-dot" style="background:#e5533d"></span>
+          <span class="term-dot" style="background:#e6b422"></span>
+          <span class="term-dot" style="background:#3fb950"></span>
+          <span class="term-title">status.sh</span>
+        </div>
+        <div class="term-body">
+          <p class="term-line"><span class="term-prompt">wilson@fisi</span><span class="term-key">:~$</span> cat status.txt</p>
+
+          <div class="term-kv">
+            <span class="term-key">umschulung</span>
+            <span class="term-val">Fachinformatiker Systemintegration (IHK)</span>
+
+            <span class="term-key">praktikum</span>
+            <span class="term-val">Linux-Team @ Computer Manufaktur GmbH <span class="term-badge">aktuell</span></span>
+
+            <span class="term-key">naechste_pruefung</span>
+            <span class="term-val">CompTIA Network+ — <span data-exam="comptia">wird berechnet…</span></span>
+
+            <span class="term-key">danach</span>
+            <span class="term-val">AP1 — <span data-exam="ap1">wird berechnet…</span></span>
+          </div>
+
+          <p class="term-line"><span class="term-prompt">wilson@fisi</span><span class="term-key">:~$</span> date</p>
+          <p class="term-line term-out" data-clock>wird geladen…</p>
+          <p class="term-line"><span class="term-prompt">wilson@fisi</span><span class="term-key">:~$</span><span class="cursor"></span></p>
+        </div>
       </div>
     </header>
 
     <section class="grid">
-      <div class="card">
+      <div class="card reveal">
         <h2>Über mich</h2>
         <p class="muted">
-	    Ich bin Umschüler zum Fachinformatiker für Systemintegration (IHK) bei der Cimdata Bildungsakademie GmbH-Berlin und baue mir Schritt für Schritt eine solide Praxis auf.
-        Ich arbeite sowohl mit <strong>Windows</strong> als auch mit <strong>Linux</strong> – von Installation und Systempflege bis zu grundlegenden Netzwerk-Themen.
-        Mir ist wichtig, verständlich zu dokumentieren, sauber zu testen und aus Fehlern zu lernen.
-        Mein Portfolio zeigt Lernprojekte aus dem Unterricht und dem Homelab und den Weg vom Interesse zur beruflichen Praxis – ruhig, zuverlässig und mit Freude am technischen Detail.
+          Ich bin Umschüler zum Fachinformatiker für Systemintegration (IHK) bei der Cimdata Bildungsakademie
+          Berlin und sammle aktuell praktische Erfahrung im Linux-Team der Computer Manufaktur GmbH.
+          Ich arbeite mit Windows und Linux – von der Installation bis zu grundlegenden Netzwerk- und
+          Server-Themen. Mein Homelab ist mein Übungsfeld: Dort vertiefe ich Basis-Konzepte aus
+          Virtualisierung, Monitoring und Automatisierung, dokumentiere meinen Fortschritt und lerne
+          aus jedem Fehler.
         </p>
+
         <div class="sep"></div>
 
-        <h2>Projekte</h2>
+        <h2>Homelab &amp; Projekte</h2>
+        <p class="muted" style="margin-top:-4px">Lernprojekte aus Unterricht und Homelab – Schritt für Schritt, mit Fokus auf Grundlagen.</p>
 
         <div class="project">
-          <strong>Subnetting (Python)</strong>
-          <div class="muted">Übungen & Tools zum Rechnen und Verstehen von IPv4-Subnetzen.</div>
-          <div><a href="https://github.com/utopiasinfin/subnetting" target="_blank" rel="noreferrer">Repo ansehen</a></div>
+          <div class="project-head"><span class="tag">Virtualisierung</span></div>
+          <strong>Proxmox-Cluster (Lernumgebung)</strong>
+          <div class="muted">Mehrere Nodes mit VMs und LXC-Containern, um Virtualisierungs-Grundlagen praktisch zu üben.</div>
+          <div class="stack">Technik-Stack: <code>Proxmox VE</code> · <code>QEMU/KVM</code> · <code>LXC</code></div>
         </div>
 
         <div class="project">
-          <strong>Homelab: Dienste & Netzwerk</strong>
-          <div class="muted">DNS, DHCP, Server-Services, Tests, Monitoring (Dokumentation folgt).</div>
-          <div class="muted">Technik-Stack: <code>Debian</code> · <code>BIND</code> · <code>SSH</code> · <code>LAN</code></div>
+          <div class="project-head"><span class="tag">Monitoring</span></div>
+          <strong>Zentrale Systemüberwachung</strong>
+          <div class="muted">Checkmk überwacht Dienste, Netzwerk-Interfaces und Systemzeit im Homelab und benachrichtigt per E-Mail.</div>
+          <div class="stack">Technik-Stack: <code>Checkmk</code></div>
+        </div>
+
+        <div class="project">
+          <div class="project-head"><span class="tag">DNS &amp; Filterung</span></div>
+          <strong>Eigene DNS-Zone &amp; Werbeblocker</strong>
+          <div class="muted">BIND9 beantwortet eine eigene interne Zone, Pi-hole filtert DNS-Anfragen netzwerkweit.</div>
+          <div class="stack">Technik-Stack: <code>BIND9</code> · <code>Pi-hole</code></div>
+        </div>
+
+        <div class="project">
+          <div class="project-head"><span class="tag">Mail</span></div>
+          <strong>Internes Mail-Relay</strong>
+          <div class="muted">Postfix und Dovecot leiten System- und Monitoring-Benachrichtigungen intern zu.</div>
+          <div class="stack">Technik-Stack: <code>Postfix</code> · <code>Dovecot</code></div>
+        </div>
+
+        <div class="project">
+          <div class="project-head"><span class="tag">Automatisierung</span></div>
+          <strong>Konfigurationsmanagement</strong>
+          <div class="muted">Ansible übernimmt wiederkehrende Aufgaben und hält die Konfiguration mehrerer Hosts konsistent.</div>
+          <div class="stack">Technik-Stack: <code>Ansible</code></div>
+        </div>
+
+        <div class="project">
+          <div class="project-head"><span class="tag">Netzwerk</span></div>
+          <strong>Subnetting (Python)</strong>
+          <div class="muted">Übungen &amp; Tools zum Rechnen und Verstehen von IPv4-Subnetzen.</div>
+          <div class="stack">Technik-Stack: <code>Python</code></div>
+          <div><a href="https://github.com/utopiasinfin/subnetting" target="_blank" rel="noreferrer">Repo ansehen</a></div>
         </div>
       </div>
 
-      <aside class="card">
+      <aside class="card reveal">
         <h2>Skills</h2>
-        <ul>
-          <li>Linux: Debian, Fedora, CLI, Services, Rechte, Logs, Bash</li>
-	  <li>Windows(XP, 10, 11), Windows Server(Grundlagen in Gruppenrechte, Active Directory, Webserver, Installation, Systempflege)</li>	
-          <li>Netzwerk Grundlagen: IPv4, Subnetting, Routing, VLAN-Basics</li>
-          <li>Tools: Git, Wireshark (Basics), QEMU/KVM, Oracle VirtualBox</li>
-	  <li>Soft Skills: Kommunikationsstark, Teamorientiert, Lernbereitschaft</li>	
-        </ul>		  
-     <div class="sep"></div>
+        <ul class="skills">
+          <li><b>Linux:</b> Debian, Fedora, CLI, Systemd, Rechte, Logs, Bash</li>
+          <li><b>Windows / Windows Server:</b> Grundlagen Gruppenrichtlinien, Active Directory, Installation, Systempflege</li>
+          <li><b>Netzwerk:</b> IPv4, Subnetting, Routing, VLAN-Grundlagen</li>
+          <li><b>Virtualisierung &amp; Tools:</b> Proxmox VE, QEMU/KVM, VirtualBox, Ansible, Git, Wireshark (Basics)</li>
+          <li><b>Soft Skills:</b> Kommunikationsstark, Teamorientiert, Lernbereitschaft</li>
+        </ul>
 
-  <h2>Zertifizierung</h2>
-     <div class="project">
-        <strong>Linux Essentials — Linux Professional Institute (LPI)</strong>
-    <div class="muted">
-        Grundlagenzertifizierung für Linux, Kommandozeile, Open-Source-Konzepte und Systemverständnis.
-    </div>
+        <div class="sep"></div>
 
-    <div style="margin-top:12px;">
-      <a href="https://www.credly.com/badges/2270f768-bf8d-4909-a984-451cb5a13ea4" target="_blank" rel="noreferrer">
-        <img src="./assets/images/linux-essentials-badge.png"
-             alt="Linux Essentials LPI Badge"
-             style="max-width:140px; height:auto; border-radius:12px; border:1px solid var(--border); box-shadow:var(--shadow);">
-      </a>
-    </div>
+        <h2>Zertifizierung</h2>
+        <div class="project" style="border-bottom:none; padding-top:0;">
+          <strong>Linux Essentials — Linux Professional Institute (LPI)</strong>
+          <div class="muted">Grundlagenzertifizierung für Linux, Kommandozeile, Open-Source-Konzepte und Systemverständnis.</div>
 
-    <div style="margin-top:10px;">
-      <a href="https://www.credly.com/badges/2270f768-bf8d-4909-a984-451cb5a13ea4" target="_blank" rel="noreferrer">
-        Verifiziertes Badge auf Credly ansehen
-      </a>
-    </div>
-  </div>
+          <div style="margin-top:12px;">
+            <a href="https://www.credly.com/badges/2270f768-bf8d-4909-a984-451cb5a13ea4" target="_blank" rel="noreferrer">
+              <img src="./assets/images/linux-essentials-badge.png"
+                   alt="Linux Essentials LPI Badge"
+                   style="max-width:140px; height:auto; border-radius:12px; border:1px solid var(--border); box-shadow:var(--shadow);">
+            </a>
+          </div>
+          <div style="margin-top:10px;">
+            <a href="https://www.credly.com/badges/2270f768-bf8d-4909-a984-451cb5a13ea4" target="_blank" rel="noreferrer">
+              Verifiziertes Badge auf Credly ansehen
+            </a>
+          </div>
 
-  <div class="sep"></div>
+          <div class="muted" style="margin-top:14px;">
+            In Vorbereitung: <b style="color:var(--text)">CompTIA Network+</b> — <span data-exam="comptia">wird berechnet…</span>
+          </div>
+        </div>
+
+        <div class="sep"></div>
+
         <h2>Kontakt</h2>
-        <ul>
+        <ul class="skills">
           <li><a href="mailto:escobarrodriguezwilson@gmail.com">escobarrodriguezwilson@gmail.com</a></li>
           <li><a href="https://github.com/utopiasinfin" target="_blank" rel="noreferrer">github.com/utopiasinfin</a></li>
           <li><a href="https://www.linkedin.com/in/wilson-escobar-rodriguez-5b5845323/" target="_blank" rel="noreferrer">linkedin.com/in/…</a></li>
         </ul>
 
-        <footer>
+        <footer class="site">
           <div>© <span id="y"></span> Wilson Escobar Rodriguez</div>
         </footer>
       </aside>
     </section>
   </main>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+  <script src="./assets/js/script.js" defer></script>
 </body>
 </html>
