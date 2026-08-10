@@ -14,11 +14,43 @@
 <body>
   <main class="wrap">
 
-    <header class="hero">
-      <div class="title">
+    <section class="hero">
+      <svg class="hero-art" viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g stroke="var(--accent)" stroke-opacity="0.32" stroke-width="1.2" fill="none">
+          <line x1="60" y1="60" x2="180" y2="40"/>
+          <line x1="180" y1="40" x2="300" y2="80"/>
+          <line x1="300" y1="80" x2="420" y2="50"/>
+          <line x1="180" y1="40" x2="140" y2="150"/>
+          <line x1="300" y1="80" x2="260" y2="180"/>
+          <line x1="420" y1="50" x2="380" y2="160"/>
+          <line x1="140" y1="150" x2="90" y2="260"/>
+          <line x1="260" y1="180" x2="220" y2="300"/>
+          <line x1="260" y1="180" x2="340" y2="270"/>
+          <line x1="380" y1="160" x2="340" y2="270"/>
+          <line x1="340" y1="270" x2="450" y2="230"/>
+          <line x1="220" y1="300" x2="90" y2="260"/>
+          <line x1="140" y1="150" x2="260" y2="180"/>
+        </g>
+        <g fill="var(--accent)">
+          <circle cx="260" cy="180" r="14" opacity="0.10"/>
+          <circle cx="260" cy="180" r="6" opacity="0.9"/>
+          <circle cx="60" cy="60" r="4" opacity="0.6"/>
+          <circle cx="180" cy="40" r="4" opacity="0.6"/>
+          <circle cx="300" cy="80" r="4" opacity="0.7"/>
+          <circle cx="420" cy="50" r="4" opacity="0.6"/>
+          <circle cx="140" cy="150" r="4" opacity="0.65"/>
+          <circle cx="380" cy="160" r="4" opacity="0.65"/>
+          <circle cx="90" cy="260" r="4" opacity="0.55"/>
+          <circle cx="220" cy="300" r="4" opacity="0.55"/>
+          <circle cx="340" cy="270" r="4" opacity="0.65"/>
+          <circle cx="450" cy="230" r="4" opacity="0.55"/>
+        </g>
+      </svg>
+
+      <div class="hero-inner">
         <div class="kicker">IT-Portfolio</div>
         <h1>Wilson Escobar Rodriguez</h1>
-        <p class="role">Umschüler Fachinformatiker Systemintegration (IHK) · Cimdata Bildungsakademie Berlin · Praktikum im Linux-Team bei Computer Manufaktur GmbH</p>
+        <p class="role muted">Umschüler Fachinformatiker Systemintegration (IHK) · Cimdata Bildungsakademie Berlin · Praktikum im Linux-Team bei Computer Manufaktur GmbH</p>
 
         <div class="chips">
           <span class="chip">Windows / Windows Server</span>
@@ -45,150 +77,161 @@
             LinkedIn
           </a>
         </div>
-      </div>
 
-      <!-- Signatur-Element: live berechnetes Status-Panel -->
-      <div class="term">
-        <div class="term-bar">
-          <span class="term-dot" style="background:#e5533d"></span>
-          <span class="term-dot" style="background:#e6b422"></span>
-          <span class="term-dot" style="background:#3fb950"></span>
-          <span class="term-title">status.sh</span>
-        </div>
-        <div class="term-body">
-          <p class="term-line"><span class="term-prompt">wilson@fisi</span><span class="term-key">:~$</span> cat status.txt</p>
-
-          <div class="term-kv">
-            <span class="term-key">umschulung</span>
-            <span class="term-val">Fachinformatiker Systemintegration (IHK)</span>
-
-            <span class="term-key">praktikum</span>
-            <span class="term-val">Linux-Team @ Computer Manufaktur GmbH <span class="term-badge">aktuell</span></span>
-
-            <span class="term-key">naechste_pruefung</span>
-            <span class="term-val">CompTIA Network+ — <span data-exam="comptia">wird berechnet…</span></span>
-
-            <span class="term-key">danach</span>
-            <span class="term-val">AP1 — <span data-exam="ap1">wird berechnet…</span></span>
+        <!-- Signatur-Element: live berechnetes Status-Panel -->
+        <div class="term reveal">
+          <div class="term-bar">
+            <span class="term-dot" style="background:#e5533d"></span>
+            <span class="term-dot" style="background:#e6b422"></span>
+            <span class="term-dot" style="background:#3fb950"></span>
+            <span class="term-title">status.sh</span>
           </div>
+          <div class="term-body">
+            <p class="term-line"><span class="term-prompt">wilson@fisi</span><span class="term-key">:~$</span> cat status.txt</p>
 
-          <p class="term-line"><span class="term-prompt">wilson@fisi</span><span class="term-key">:~$</span> date</p>
-          <p class="term-line term-out" data-clock>wird geladen…</p>
-          <p class="term-line"><span class="term-prompt">wilson@fisi</span><span class="term-key">:~$</span><span class="cursor"></span></p>
+            <div class="term-kv">
+              <span class="term-key">umschulung</span>
+              <span class="term-val">Fachinformatiker Systemintegration (IHK)</span>
+
+              <span class="term-key">praktikum</span>
+              <span class="term-val">Linux-Team @ Computer Manufaktur GmbH <span class="term-badge">aktuell</span></span>
+
+              <span class="term-key">naechste_pruefung</span>
+              <span class="term-val">CompTIA Network+ — <span data-exam="comptia">wird berechnet…</span></span>
+
+              <span class="term-key">danach</span>
+              <span class="term-val">AP1 — <span data-exam="ap1">wird berechnet…</span></span>
+            </div>
+
+            <p class="term-line"><span class="term-prompt">wilson@fisi</span><span class="term-key">:~$</span> date</p>
+            <p class="term-line term-out" data-clock>wird geladen…</p>
+            <p class="term-line"><span class="term-prompt">wilson@fisi</span><span class="term-key">:~$</span><span class="cursor"></span></p>
+          </div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <section class="grid">
-      <div class="card reveal">
-        <h2>Über mich</h2>
-        <p class="muted">
-          Ich bin Umschüler zum Fachinformatiker für Systemintegration (IHK) bei der Cimdata Bildungsakademie
-          Berlin und sammle aktuell praktische Erfahrung im Linux-Team der Computer Manufaktur GmbH.
-          Ich arbeite mit Windows und Linux – von der Installation bis zu grundlegenden Netzwerk- und
-          Server-Themen. Mein Homelab ist mein Übungsfeld: Dort vertiefe ich Basis-Konzepte aus
-          Virtualisierung, Monitoring und Automatisierung, dokumentiere meinen Fortschritt und lerne
-          aus jedem Fehler.
-        </p>
+    <section class="section reveal">
+      <div class="section-head">
+        <h2 class="section-title">Über mich</h2>
+      </div>
+      <p class="muted" style="max-width:80ch">
+        Ich bin Umschüler zum Fachinformatiker für Systemintegration (IHK) bei der Cimdata Bildungsakademie
+        Berlin und sammle aktuell praktische Erfahrung im Linux-Team der Computer Manufaktur GmbH.
+        Ich arbeite mit Windows und Linux – von der Installation bis zu grundlegenden Netzwerk- und
+        Server-Themen. Mein Homelab ist mein Übungsfeld: Dort vertiefe ich Basis-Konzepte aus
+        Virtualisierung, Monitoring und Automatisierung, dokumentiere meinen Fortschritt und lerne
+        aus jedem Fehler.
+      </p>
+    </section>
 
-        <div class="sep"></div>
+    <section class="section reveal">
+      <div class="section-head">
+        <h2 class="section-title">Homelab &amp; Projekte</h2>
+        <p class="muted">Lernprojekte aus Unterricht und Homelab – Schritt für Schritt, mit Fokus auf Grundlagen.</p>
+      </div>
 
-        <h2>Homelab &amp; Projekte</h2>
-        <p class="muted" style="margin-top:-4px">Lernprojekte aus Unterricht und Homelab – Schritt für Schritt, mit Fokus auf Grundlagen.</p>
-
-        <div class="project">
-          <div class="project-head"><span class="tag">Virtualisierung</span></div>
+      <div class="tile-grid">
+        <div class="tile">
+          <span class="tag">Virtualisierung</span>
           <strong>Proxmox-Cluster (Lernumgebung)</strong>
-          <div class="muted">Mehrere Nodes mit VMs und LXC-Containern, um Virtualisierungs-Grundlagen praktisch zu üben.</div>
+          <div class="desc">Mehrere Nodes mit VMs und LXC-Containern, um Virtualisierungs-Grundlagen praktisch zu üben.</div>
           <div class="stack">Technik-Stack: <code>Proxmox VE</code> · <code>QEMU/KVM</code> · <code>LXC</code></div>
         </div>
 
-        <div class="project">
-          <div class="project-head"><span class="tag">Monitoring</span></div>
+        <div class="tile">
+          <span class="tag">Monitoring</span>
           <strong>Zentrale Systemüberwachung</strong>
-          <div class="muted">Checkmk überwacht Dienste, Netzwerk-Interfaces und Systemzeit im Homelab und benachrichtigt per E-Mail.</div>
+          <div class="desc">Checkmk überwacht Dienste, Netzwerk-Interfaces und Systemzeit im Homelab und benachrichtigt per E-Mail.</div>
           <div class="stack">Technik-Stack: <code>Checkmk</code></div>
         </div>
 
-        <div class="project">
-          <div class="project-head"><span class="tag">DNS &amp; Filterung</span></div>
+        <div class="tile">
+          <span class="tag">DNS &amp; Filterung</span>
           <strong>Eigene DNS-Zone &amp; Werbeblocker</strong>
-          <div class="muted">BIND9 beantwortet eine eigene interne Zone, Pi-hole filtert DNS-Anfragen netzwerkweit.</div>
+          <div class="desc">BIND9 beantwortet eine eigene interne Zone, Pi-hole filtert DNS-Anfragen netzwerkweit.</div>
           <div class="stack">Technik-Stack: <code>BIND9</code> · <code>Pi-hole</code></div>
         </div>
 
-        <div class="project">
-          <div class="project-head"><span class="tag">Mail</span></div>
+        <div class="tile">
+          <span class="tag">Mail</span>
           <strong>Internes Mail-Relay</strong>
-          <div class="muted">Postfix und Dovecot leiten System- und Monitoring-Benachrichtigungen intern zu.</div>
+          <div class="desc">Postfix und Dovecot leiten System- und Monitoring-Benachrichtigungen intern zu.</div>
           <div class="stack">Technik-Stack: <code>Postfix</code> · <code>Dovecot</code></div>
         </div>
 
-        <div class="project">
-          <div class="project-head"><span class="tag">Automatisierung</span></div>
+        <div class="tile">
+          <span class="tag">Automatisierung</span>
           <strong>Konfigurationsmanagement</strong>
-          <div class="muted">Ansible übernimmt wiederkehrende Aufgaben und hält die Konfiguration mehrerer Hosts konsistent.</div>
+          <div class="desc">Ansible übernimmt wiederkehrende Aufgaben und hält die Konfiguration mehrerer Hosts konsistent.</div>
           <div class="stack">Technik-Stack: <code>Ansible</code></div>
         </div>
 
-        <div class="project">
-          <div class="project-head"><span class="tag">Netzwerk</span></div>
+        <div class="tile">
+          <span class="tag">Netzwerk</span>
           <strong>Subnetting (Python)</strong>
-          <div class="muted">Übungen &amp; Tools zum Rechnen und Verstehen von IPv4-Subnetzen.</div>
+          <div class="desc">Übungen &amp; Tools zum Rechnen und Verstehen von IPv4-Subnetzen.</div>
           <div class="stack">Technik-Stack: <code>Python</code></div>
-          <div><a href="https://github.com/utopiasinfin/subnetting" target="_blank" rel="noreferrer">Repo ansehen</a></div>
+          <div class="tile-link"><a href="https://github.com/utopiasinfin/subnetting" target="_blank" rel="noreferrer">Repo ansehen →</a></div>
         </div>
       </div>
+    </section>
 
-      <aside class="card reveal">
-        <h2>Skills</h2>
-        <ul class="skills">
-          <li><b>Linux:</b> Debian, Fedora, CLI, Systemd, Rechte, Logs, Bash</li>
-          <li><b>Windows / Windows Server:</b> Grundlagen Gruppenrichtlinien, Active Directory, Installation, Systempflege</li>
-          <li><b>Netzwerk:</b> IPv4, Subnetting, Routing, VLAN-Grundlagen</li>
-          <li><b>Virtualisierung &amp; Tools:</b> Proxmox VE, QEMU/KVM, VirtualBox, Ansible, Git, Wireshark (Basics)</li>
-          <li><b>Soft Skills:</b> Kommunikationsstark, Teamorientiert, Lernbereitschaft</li>
-        </ul>
+    <section class="section reveal">
+      <div class="section-head">
+        <h2 class="section-title">Profil</h2>
+      </div>
 
-        <div class="sep"></div>
+      <div class="info-grid">
+        <div class="card">
+          <h2 class="section-title">Skills</h2>
+          <ul class="skills">
+            <li><b>Linux:</b> Debian, Fedora, CLI, Systemd, Rechte, Logs, Bash</li>
+            <li><b>Windows / Windows Server:</b> Grundlagen Gruppenrichtlinien, Active Directory, Installation, Systempflege</li>
+            <li><b>Netzwerk:</b> IPv4, Subnetting, Routing, VLAN-Grundlagen</li>
+            <li><b>Virtualisierung &amp; Tools:</b> Proxmox VE, QEMU/KVM, VirtualBox, Ansible, Git, Wireshark (Basics)</li>
+            <li><b>Soft Skills:</b> Kommunikationsstark, Teamorientiert, Lernbereitschaft</li>
+          </ul>
+        </div>
 
-        <h2>Zertifizierung</h2>
-        <div class="project" style="border-bottom:none; padding-top:0;">
-          <strong>Linux Essentials — Linux Professional Institute (LPI)</strong>
-          <div class="muted">Grundlagenzertifizierung für Linux, Kommandozeile, Open-Source-Konzepte und Systemverständnis.</div>
+        <div class="card">
+          <h2 class="section-title">Zertifizierung</h2>
+          <strong>Linux Essentials — LPI</strong>
+          <div class="muted" style="margin-top:6px; font-size:13px;">Grundlagenzertifizierung für Linux, Kommandozeile, Open-Source-Konzepte und Systemverständnis.</div>
 
           <div style="margin-top:12px;">
             <a href="https://www.credly.com/badges/2270f768-bf8d-4909-a984-451cb5a13ea4" target="_blank" rel="noreferrer">
               <img src="./assets/images/linux-essentials-badge.png"
                    alt="Linux Essentials LPI Badge"
-                   style="max-width:140px; height:auto; border-radius:12px; border:1px solid var(--border); box-shadow:var(--shadow);">
+                   style="max-width:120px; height:auto; border-radius:12px; border:1px solid var(--border); box-shadow:var(--shadow);">
             </a>
           </div>
-          <div style="margin-top:10px;">
+          <div style="margin-top:10px; font-size:13px;">
             <a href="https://www.credly.com/badges/2270f768-bf8d-4909-a984-451cb5a13ea4" target="_blank" rel="noreferrer">
-              Verifiziertes Badge auf Credly ansehen
+              Badge auf Credly ansehen
             </a>
           </div>
 
-          <div class="muted" style="margin-top:14px;">
+          <div class="sep"></div>
+          <div class="muted" style="font-size:13px;">
             In Vorbereitung: <b style="color:var(--text)">CompTIA Network+</b> — <span data-exam="comptia">wird berechnet…</span>
           </div>
         </div>
 
-        <div class="sep"></div>
-
-        <h2>Kontakt</h2>
-        <ul class="skills">
-          <li><a href="mailto:escobarrodriguezwilson@gmail.com">escobarrodriguezwilson@gmail.com</a></li>
-          <li><a href="https://github.com/utopiasinfin" target="_blank" rel="noreferrer">github.com/utopiasinfin</a></li>
-          <li><a href="https://www.linkedin.com/in/wilson-escobar-rodriguez-5b5845323/" target="_blank" rel="noreferrer">linkedin.com/in/…</a></li>
-        </ul>
-
-        <footer class="site">
-          <div>© <span id="y"></span> Wilson Escobar Rodriguez</div>
-        </footer>
-      </aside>
+        <div class="card">
+          <h2 class="section-title">Kontakt</h2>
+          <ul class="skills">
+            <li><a href="mailto:escobarrodriguezwilson@gmail.com">escobarrodriguezwilson@gmail.com</a></li>
+            <li><a href="https://github.com/utopiasinfin" target="_blank" rel="noreferrer">github.com/utopiasinfin</a></li>
+            <li><a href="https://www.linkedin.com/in/wilson-escobar-rodriguez-5b5845323/" target="_blank" rel="noreferrer">linkedin.com/in/…</a></li>
+          </ul>
+        </div>
+      </div>
     </section>
+
+    <footer class="site">
+      <div>© <span id="y"></span> Wilson Escobar Rodriguez</div>
+    </footer>
   </main>
 
   <script src="./assets/js/script.js" defer></script>
