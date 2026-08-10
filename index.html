@@ -12,6 +12,22 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-brand"><span class="bracket">[</span> <b>wilson</b>.escobar <span class="bracket">]</span></div>
+      <div class="nav-links">
+        <a href="#projekte">projekte</a>
+        <a href="#profil">profil</a>
+        <a href="./profil.html">über mich</a>
+      </div>
+      <div class="nav-right">
+        <button type="button" class="theme-toggle" data-theme-toggle>Light</button>
+        <span data-clock>—</span>
+      </div>
+    </div>
+  </nav>
+
   <main class="wrap">
 
     <section class="hero">
@@ -78,7 +94,6 @@
           </a>
         </div>
 
-        <!-- Signatur-Element: live berechnetes Status-Panel -->
         <div class="term reveal">
           <div class="term-bar">
             <span class="term-dot" style="background:#e5533d"></span>
@@ -104,7 +119,7 @@
             </div>
 
             <p class="term-line"><span class="term-prompt">wilson@fisi</span><span class="term-key">:~$</span> date</p>
-            <p class="term-line term-out" data-clock>wird geladen…</p>
+            <p class="term-line term-out" data-clock2>wird geladen…</p>
             <p class="term-line"><span class="term-prompt">wilson@fisi</span><span class="term-key">:~$</span><span class="cursor"></span></p>
           </div>
         </div>
@@ -113,9 +128,11 @@
 
     <section class="section reveal">
       <div class="section-head">
-        <h2 class="section-title">Über mich</h2>
+        <span class="section-num">[ 01 ]</span>
+        <h2 class="section-title">ÜBER MICH</h2>
+        <span class="section-rule"></span>
       </div>
-      <p class="muted" style="max-width:80ch">
+      <p class="muted section-intro" style="max-width:80ch">
         Ich bin Umschüler zum Fachinformatiker für Systemintegration (IHK) bei der Cimdata Bildungsakademie
         Berlin und sammle aktuell praktische Erfahrung im Linux-Team der Computer Manufaktur GmbH.
         Ich arbeite mit Windows und Linux – von der Installation bis zu grundlegenden Netzwerk- und
@@ -125,50 +142,82 @@
       </p>
     </section>
 
-    <section class="section reveal">
+    <section class="section reveal" id="projekte">
       <div class="section-head">
-        <h2 class="section-title">Homelab &amp; Projekte</h2>
-        <p class="muted">Lernprojekte aus Unterricht und Homelab – Schritt für Schritt, mit Fokus auf Grundlagen.</p>
+        <span class="section-num">[ 02 ]</span>
+        <h2 class="section-title">HOMELAB &amp; PROJEKTE</h2>
+        <span class="section-rule"></span>
       </div>
+      <p class="muted section-intro">Lernprojekte aus Unterricht und Homelab – Schritt für Schritt, mit Fokus auf Grundlagen.</p>
 
       <div class="tile-grid">
         <div class="tile">
-          <span class="tag">Virtualisierung</span>
+          <div class="tile-head">
+            <div class="tile-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="4" rx="1"/><rect x="4" y="10" width="16" height="4" rx="1"/><rect x="4" y="16" width="16" height="4" rx="1"/></svg>
+            </div>
+            <span class="badge">Aktiv</span>
+          </div>
           <strong>Proxmox-Cluster (Lernumgebung)</strong>
           <div class="desc">Mehrere Nodes mit VMs und LXC-Containern, um Virtualisierungs-Grundlagen praktisch zu üben.</div>
           <div class="stack">Technik-Stack: <code>Proxmox VE</code> · <code>QEMU/KVM</code> · <code>LXC</code></div>
         </div>
 
         <div class="tile">
-          <span class="tag">Monitoring</span>
+          <div class="tile-head">
+            <div class="tile-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,12 8,12 10,6 14,18 16,12 21,12"/></svg>
+            </div>
+            <span class="badge">Aktiv</span>
+          </div>
           <strong>Zentrale Systemüberwachung</strong>
           <div class="desc">Checkmk überwacht Dienste, Netzwerk-Interfaces und Systemzeit im Homelab und benachrichtigt per E-Mail.</div>
           <div class="stack">Technik-Stack: <code>Checkmk</code></div>
         </div>
 
         <div class="tile">
-          <span class="tag">DNS &amp; Filterung</span>
+          <div class="tile-head">
+            <div class="tile-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z"/></svg>
+            </div>
+            <span class="badge">Aktiv</span>
+          </div>
           <strong>Eigene DNS-Zone &amp; Werbeblocker</strong>
           <div class="desc">BIND9 beantwortet eine eigene interne Zone, Pi-hole filtert DNS-Anfragen netzwerkweit.</div>
           <div class="stack">Technik-Stack: <code>BIND9</code> · <code>Pi-hole</code></div>
         </div>
 
         <div class="tile">
-          <span class="tag">Mail</span>
+          <div class="tile-head">
+            <div class="tile-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            </div>
+            <span class="badge">Aktiv</span>
+          </div>
           <strong>Internes Mail-Relay</strong>
           <div class="desc">Postfix und Dovecot leiten System- und Monitoring-Benachrichtigungen intern zu.</div>
           <div class="stack">Technik-Stack: <code>Postfix</code> · <code>Dovecot</code></div>
         </div>
 
         <div class="tile">
-          <span class="tag">Automatisierung</span>
+          <div class="tile-head">
+            <div class="tile-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg>
+            </div>
+            <span class="badge">Aktiv</span>
+          </div>
           <strong>Konfigurationsmanagement</strong>
           <div class="desc">Ansible übernimmt wiederkehrende Aufgaben und hält die Konfiguration mehrerer Hosts konsistent.</div>
           <div class="stack">Technik-Stack: <code>Ansible</code></div>
         </div>
 
         <div class="tile">
-          <span class="tag">Netzwerk</span>
+          <div class="tile-head">
+            <div class="tile-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M6 8l6 8M18 8l-6 8M8 6h8"/></svg>
+            </div>
+            <span class="badge" style="background:var(--accent); color:var(--on-accent);">Repo</span>
+          </div>
           <strong>Subnetting (Python)</strong>
           <div class="desc">Übungen &amp; Tools zum Rechnen und Verstehen von IPv4-Subnetzen.</div>
           <div class="stack">Technik-Stack: <code>Python</code></div>
@@ -177,12 +226,14 @@
       </div>
     </section>
 
-    <section class="section reveal">
+    <section class="section reveal" id="profil">
       <div class="section-head">
-        <h2 class="section-title">Profil</h2>
+        <span class="section-num">[ 03 ]</span>
+        <h2 class="section-title">PROFIL</h2>
+        <span class="section-rule"></span>
       </div>
 
-      <div class="info-grid">
+      <div class="info-grid" style="margin-top:20px;">
         <div class="card">
           <h2 class="section-title">Skills</h2>
           <ul class="skills">

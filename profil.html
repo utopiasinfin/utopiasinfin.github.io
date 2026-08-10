@@ -12,6 +12,27 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="./index.html" style="text-decoration:none;">
+        <div class="nav-brand"><span class="bracket">[</span> <b>wilson</b>.escobar <span class="bracket">]</span></div>
+      </a>
+      <div class="nav-links">
+        <a href="./index.html#projekte">projekte</a>
+        <a href="./index.html#profil">profil</a>
+      </div>
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <button type="button" data-lang-btn="de">DE</button>
+          <button type="button" data-lang-btn="en">EN</button>
+        </div>
+        <button type="button" class="theme-toggle" data-theme-toggle>Light</button>
+        <span data-clock>—</span>
+      </div>
+    </div>
+  </nav>
+
   <main class="wrap">
     <div class="card reveal">
       <div class="profile-hero">
@@ -24,14 +45,12 @@
       </div>
 
       <div class="row">
-        <a class="btn" href="./index.html">← Zur Startseite</a>
         <a class="btn" href="./cv/cv.pdf" target="_blank" rel="noreferrer">Lebenslauf (PDF)</a>
         <a class="btn" href="./cv/zwischenzeugnis.pdf" target="_blank" rel="noreferrer">Zwischenzeugnis (PDF)</a>
       </div>
 
-      <div class="lang-block">
-        <h2 class="section-title">Deutsch</h2>
-        <p>
+      <div class="lang-block" data-lang-block="de">
+        <p style="margin-top:24px">
           Ich heiße Wilson Escobar Rodriguez und absolviere seit Januar 2025 eine Umschulung zum
           Fachinformatiker für Systemintegration bei der Cimdata Bildungsakademie GmbH in Berlin. Nach
           vielen Jahren Berufserfahrung in der Gastronomie – unter anderem im direkten Kundenkontakt –
@@ -50,9 +69,10 @@
           täglich mit einem kleinen Proxmox-Cluster, Basis-Monitoring (Checkmk), eigenem DNS (BIND9) und
           netzwerkweiter Werbeblockierung (Pi-hole) – und dokumentiere meinen Lernfortschritt.
         </p>
+      </div>
 
-        <h2 class="section-title">English</h2>
-        <p>
+      <div class="lang-block" data-lang-block="en">
+        <p style="margin-top:24px">
           My name is Wilson Escobar Rodriguez and since January 2025 I have been retraining as an IT
           Specialist for System Integration (IHK) at Cimdata Bildungsakademie GmbH in Berlin. After many
           years of professional experience in hospitality and customer-facing roles, I bring strong

@@ -1,21 +1,22 @@
 /* ============================================================
    Wilson Escobar Rodriguez — IT-Portfolio
-   Design: dunkles Terminal/Editorial-Theme, ein Font (JetBrains Mono).
-   V2 — echtes Kachel-/Grid-Layout statt zwei ungleicher Boxen.
+   V3 — echte Nav-Leiste, nummerierte Section-Regeln, Icon-Kacheln
+   mit High-Contrast-Badges, weiche Hintergrund-Verläufe statt Flat-Black.
    ============================================================ */
 
 :root{
-  --bg:        #090d13;
+  --bg:        #0a0e14;
   --bg-glow:   #142238;
   --panel:     #101827;
   --panel-2:   #0c131e;
   --border:    #223049;
   --border-soft: rgba(34,48,73,.55);
-  --text:      #e8eef6;
+  --text:      #eef3fa;
   --muted:     #93a3b8;
   --muted-2:   #66768c;
   --accent:    #7dd3fc;
   --accent-soft: rgba(125,211,252,.10);
+  --on-accent: #0a0e15;
   --ok:        #34d399;
   --warn:      #f5b94b;
 
@@ -24,6 +25,24 @@
   --shadow:    0 10px 30px rgba(0,0,0,.38);
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   --content: 1440px;
+}
+
+:root[data-theme="light"]{
+  --bg:        #f4f6f9;
+  --bg-glow:   #e4ecf7;
+  --panel:     #ffffff;
+  --panel-2:   #eef2f7;
+  --border:    #d6dfeb;
+  --border-soft: rgba(35,60,95,.14);
+  --text:      #16202e;
+  --muted:     #566578;
+  --muted-2:   #7c8aa0;
+  --accent:    #0f7fb3;
+  --accent-soft: rgba(15,127,179,.10);
+  --on-accent: #ffffff;
+  --ok:        #157a55;
+  --warn:      #a6690a;
+  --shadow:    0 10px 26px rgba(20,35,60,.10);
 }
 
 *, *::before, *::after{ box-sizing:border-box; }
@@ -36,22 +55,22 @@ html{ scroll-behavior:smooth; }
 body{
   margin:0;
   font-family:var(--mono);
-  background:
-    radial-gradient(1200px 700px at 82% -12%, var(--bg-glow) 0%, transparent 55%),
-    var(--bg);
+  background:var(--bg);
   color:var(--text);
   line-height:1.65;
   -webkit-font-smoothing:antialiased;
+  transition:background-color .2s ease, color .2s ease;
 }
 
+/* weiche Verlaufsflächen statt flachem Schwarz — dezent, kein hartes Muster */
 body::before{
   content:"";
   position:fixed; inset:0; z-index:0; pointer-events:none;
-  background-image: repeating-linear-gradient(
-    to bottom, rgba(125,211,252,.02) 0px, rgba(125,211,252,.02) 1px,
-    transparent 1px, transparent 3px
-  );
-  opacity:.5;
+  background:
+    radial-gradient(640px 420px at 12% 8%,  rgba(125,211,252,.07), transparent 62%),
+    radial-gradient(720px 520px at 88% 22%, rgba(125,211,252,.05), transparent 60%),
+    radial-gradient(560px 420px at 30% 85%, rgba(125,211,252,.045), transparent 60%),
+    radial-gradient(500px 380px at 78% 92%, rgba(52,211,153,.035), transparent 60%);
 }
 
 a{ color:var(--accent); text-decoration:none; }
@@ -59,6 +78,39 @@ a:hover{ text-decoration:underline; }
 a:focus-visible, button:focus-visible, .btn:focus-visible{
   outline:2px solid var(--accent); outline-offset:3px; border-radius:6px;
 }
+
+/* ---------- Nav ---------- */
+.nav{
+  position:relative; z-index:2;
+  border-bottom:1px solid var(--border-soft);
+}
+.nav-inner{
+  max-width:var(--content); margin:0 auto;
+  padding:0 clamp(18px,4vw,48px);
+  height:56px;
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+}
+.nav-brand{ font-size:13.5px; color:var(--text); white-space:nowrap; }
+.nav-brand b{ font-weight:700; }
+.nav-brand .bracket{ color:var(--muted-2); }
+.nav-links{ display:flex; gap:22px; font-size:13px; }
+.nav-links a{ color:var(--muted); }
+.nav-links a:hover{ color:var(--text); text-decoration:none; }
+.nav-right{ display:flex; align-items:center; gap:16px; font-size:12px; color:var(--muted-2); white-space:nowrap; }
+.nav-clock{ font-variant-numeric:tabular-nums; }
+.lang-toggle{ display:flex; gap:4px; border:1px solid var(--border); border-radius:8px; overflow:hidden; }
+.lang-toggle button{
+  font-family:var(--mono); font-size:11px; padding:5px 9px; background:transparent;
+  color:var(--muted); border:none; cursor:pointer;
+}
+.lang-toggle button.active{ background:var(--text); color:var(--bg); }
+.theme-toggle{
+  font-family:var(--mono); font-size:11px; letter-spacing:.04em; text-transform:uppercase;
+  padding:5px 10px; border:1px solid var(--border); border-radius:8px;
+  background:transparent; color:var(--muted); cursor:pointer;
+}
+.theme-toggle:hover{ color:var(--text); border-color:#33507a; }
+@media (max-width:760px){ .nav-links{ display:none; } }
 
 /* volle Breite nutzen, aber Zeilen bleiben lesbar über section-padding */
 .wrap{
@@ -72,18 +124,18 @@ a:focus-visible, button:focus-visible, .btn:focus-visible{
 .kicker{ font-size:11px; text-transform:uppercase; letter-spacing:.16em; color:var(--muted-2); }
 h1{ margin:6px 0 0; font-size:clamp(30px, 5vw, 50px); letter-spacing:.1px; }
 h2.section-title{
-  margin:0 0 4px; font-size:13px; text-transform:uppercase;
-  letter-spacing:.14em; color:var(--accent); font-weight:600;
+  margin:0; font-size:13px; text-transform:uppercase;
+  letter-spacing:.12em; color:var(--accent); font-weight:600; white-space:nowrap;
 }
 p{ margin:0 0 12px; }
 .muted{ color:var(--muted); }
 
 /* ---------- Hero ---------- */
-.hero{ position:relative; padding-top:8px; padding-bottom:36px; overflow:visible; }
+.hero{ position:relative; padding-top:28px; padding-bottom:28px; overflow:hidden; }
 .hero-inner{ position:relative; z-index:1; max-width:64ch; }
 .hero-art{
-  position:absolute; top:-40px; right:-40px; width:min(560px, 46vw); height:auto;
-  opacity:.55; z-index:0; pointer-events:none;
+  position:absolute; top:0; right:0; width:min(340px, 32vw); height:auto;
+  opacity:.32; z-index:0; pointer-events:none;
 }
 @media (max-width:760px){ .hero-art{ display:none; } }
 
@@ -144,15 +196,18 @@ p{ margin:0 0 12px; }
   .term-kv .term-key{ margin-top:8px; }
 }
 
-/* ---------- Section-Rhythmus ---------- */
-.section{ margin-top:56px; }
-.section-head{ display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:20px; flex-wrap:wrap; }
-.section-head p{ margin:0; }
+/* ---------- Section-Rhythmus: nummeriert + durchgezogene Linie ---------- */
+.section{ margin-top:44px; }
+.section-head{ display:flex; align-items:center; gap:16px; margin-bottom:10px; }
+.section-num{ color:var(--muted-2); font-size:12.5px; white-space:nowrap; }
+.section-rule{ flex:1; height:1px; background:var(--border-soft); }
+.section-extra{ font-size:12px; color:var(--muted-2); white-space:nowrap; }
+.section-intro{ margin:14px 0 20px; }
 
-/* ---------- Projekt-Kachel-Grid (füllt die Breite automatisch) ---------- */
+/* ---------- Projekt-Kachel-Grid ---------- */
 .tile-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns:repeat(auto-fill, minmax(270px, 1fr));
   gap:16px;
 }
 .tile{
@@ -162,13 +217,19 @@ p{ margin:0 0 12px; }
   transition:border-color .15s ease, transform .15s ease;
 }
 .tile:hover{ border-color:#33507a; transform:translateY(-2px); }
-.tile .tag{
-  align-self:flex-start;
-  font-size:10.5px; text-transform:uppercase; letter-spacing:.08em;
-  padding:3px 9px; border-radius:6px; border:1px solid rgba(125,211,252,.25);
-  color:var(--accent); background:var(--accent-soft);
+.tile-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+.tile-icon{
+  width:34px; height:34px; border-radius:9px; border:1px solid var(--border);
+  background:var(--accent-soft); display:flex; align-items:center; justify-content:center;
+  color:var(--accent); flex-shrink:0;
 }
-.tile strong{ display:block; font-size:15.5px; margin-top:12px; }
+.tile-icon svg{ width:18px; height:18px; }
+.badge{
+  font-size:10px; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+  padding:4px 8px; border-radius:6px; background:var(--text); color:var(--bg);
+  white-space:nowrap;
+}
+.tile strong{ display:block; font-size:16px; margin-top:14px; }
 .tile .desc{ color:var(--muted); font-size:13.5px; margin-top:8px; flex:1; }
 .tile .stack{ margin-top:14px; color:var(--muted); font-size:12px; }
 .tile .stack code{
@@ -209,4 +270,6 @@ footer.site{ margin-top:48px; color:var(--muted-2); font-size:12.5px; }
 }
 @media (max-width:700px){ .profile-photo{ width:160px; } }
 .row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
-.lang-block h2.section-title{ margin-top:28px; }
+.lang-block h2.section-title{ margin-top:28px; display:block; }
+[data-lang-block]{ display:none; }
+[data-lang-block].active{ display:block; }
