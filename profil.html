@@ -4,106 +4,68 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Über mich — Wilson Escobar Rodriguez</title>
-<meta name="description" content="Wilson Escobar Rodriguez: Quereinsteiger aus der Gastronomie, jetzt Umschüler zum Fachinformatiker für Systemintegration in Berlin.">
-
+<meta name="description" content="Wilson Escobar Rodriguez — Quereinsteiger in der IT, Umschüler Fachinformatiker Systemintegration, Berlin.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
 
 <header class="topbar">
   <div class="shell topbar__in">
-    <a class="brand" href="./index.html">Wilson<span>.</span>Escobar</a>
-    <nav class="topnav">
-      <a href="./index.html#projekte">projekte</a>
-      <a href="./index.html#weg">weg</a>
-      <a href="./index.html#profil">profil</a>
+    <a class="brand" href="./index.html">Wilson<b>.</b>Escobar</a>
+    <nav class="topnav" aria-label="Hauptnavigation">
+      <a href="./index.html#projekte">Projekte</a>
+      <a href="./index.html#weg">Weg</a>
+      <a href="./index.html#profil">Profil</a>
     </nav>
     <div class="topbar__end">
-      <div class="switch--group">
+      <span class="clock" data-clock></span>
+      <div class="sw-group">
         <button type="button" data-lang-btn="de" aria-pressed="true">DE</button>
         <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
       </div>
-      <button class="switch" type="button" data-theme-switch>Hell</button>
+      <button class="sw" type="button" data-theme-sw>Hell</button>
     </div>
   </div>
 </header>
 
-<main>
-  <section class="shell profile">
-    <img class="profile__photo" src="./assets/img/profil.jpg" alt="Porträtfoto von Wilson Escobar Rodriguez" loading="lazy">
+<main class="shell">
+
+  <div class="profil-hero">
+    <img class="profil-photo" src="./assets/img/profil.jpg" alt="Porträtfoto von Wilson Escobar Rodriguez" loading="lazy">
     <div>
       <p class="eyebrow">Über mich</p>
-      <h1 class="hero__name" style="font-size:clamp(2rem,1.4rem+2.4vw,3.25rem)">Wilson Escobar <em>Rodriguez</em></h1>
-      <p class="hero__lead">
-        Umschüler Fachinformatiker Systemintegration (IHK) · Praktikum im Linux-Team
-        der Computer Manufaktur GmbH · Berlin
-      </p>
+      <h1 class="profil-name">Wilson Escobar Rodriguez</h1>
+      <p class="profil-role">Umschüler Fachinformatiker Systemintegration (IHK) · Praktikum im Linux-Team der Computer Manufaktur GmbH · Berlin</p>
       <div class="actions">
-        <a class="action action--solid" href="./cv/cv.pdf" target="_blank" rel="noreferrer">Lebenslauf (PDF)</a>
-        <a class="action" href="./cv/zwischenzeugnis.pdf" target="_blank" rel="noreferrer">Zwischenzeugnis (PDF)</a>
+        <a class="btn btn--solid" href="./cv/cv.pdf" target="_blank" rel="noreferrer">Lebenslauf (PDF)</a>
+        <a class="btn" href="./cv/zwischenzeugnis.pdf" target="_blank" rel="noreferrer">Zwischenzeugnis (PDF)</a>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section class="shell sec">
+  <div class="sec">
     <div class="prose" data-lang="de">
-      <p>
-        Ich heiße Wilson Escobar Rodriguez und absolviere seit Januar 2025 eine Umschulung zum
-        Fachinformatiker für Systemintegration bei der Cimdata Bildungsakademie GmbH in Berlin.
-        Nach vielen Jahren in der Gastronomie — überwiegend im direkten Kundenkontakt — bringe ich
-        mit, was man dort lernt: klare Kommunikation, Ruhe unter Druck und Verlässlichkeit im Team.
-      </p>
-      <p>
-        Technik hat mich lange begleitet, besonders das Installieren von Betriebssystemen und das
-        Zusammenspiel mit Hardware und Peripherie. Mit Linux habe ich gelernt, ältere Rechner wieder
-        nutzbar zu machen — für mich fühlt sich das jedes Mal an wie Technik, die wieder lebt.
-      </p>
-      <p>
-        Mein Pflichtpraktikum mache ich derzeit im Linux-Team der Computer Manufaktur GmbH in
-        Berlin-Charlottenburg. Dort überführe ich Schritt für Schritt Theorie in Praxis, mit Fokus
-        auf Netzwerke, Server und sauberes Troubleshooting. Linux Essentials (LPI) habe ich bereits
-        abgeschlossen; als Nächstes stehen CompTIA Network+ und die IHK-Prüfungen an.
-      </p>
-      <p>
-        Zu Hause übe ich täglich in meinem Homelab: ein kleiner Proxmox-Cluster, Monitoring mit
-        Checkmk, eigene DNS-Zone mit BIND9, netzweite Filterung mit Pi-hole und Automatisierung mit
-        Ansible. Jeden Schritt dokumentiere ich — auch die Fehler, denn daraus lerne ich am meisten.
-      </p>
+      <p>Ich heiße Wilson Escobar Rodriguez und absolviere seit Januar 2025 eine Umschulung zum Fachinformatiker für Systemintegration bei der Cimdata Bildungsakademie GmbH in Berlin. Nach vielen Jahren in der Gastronomie — überwiegend im direkten Kundenkontakt — bringe ich mit, was man dort lernt: klare Kommunikation, Ruhe unter Druck und Verlässlichkeit im Team.</p>
+      <p>Technik hat mich lange begleitet, besonders das Installieren von Betriebssystemen und das Zusammenspiel mit Hardware und Peripherie. Mit Linux habe ich gelernt, ältere Rechner wieder nutzbar zu machen — für mich fühlt sich das jedes Mal an wie Technik, die wieder lebt.</p>
+      <p>Mein Pflichtpraktikum mache ich derzeit im Linux-Team der Computer Manufaktur GmbH in Berlin-Charlottenburg. Dort überführe ich Schritt für Schritt Theorie in Praxis, mit Fokus auf Netzwerke, Server und sauberes Troubleshooting. Linux Essentials (LPI) habe ich bereits abgeschlossen; als Nächstes stehen CompTIA Network+ und die IHK-Prüfungen an.</p>
+      <p>Zu Hause übe ich täglich in meinem Homelab: ein kleiner Proxmox-Cluster, Monitoring mit Checkmk, eigene DNS-Zone mit BIND9, netzweite Filterung mit Pi-hole und Automatisierung mit Ansible. Jeden Schritt dokumentiere ich — auch die Fehler, denn daraus lerne ich am meisten.</p>
     </div>
-
     <div class="prose" data-lang="en">
-      <p>
-        My name is Wilson Escobar Rodriguez. Since January 2025 I have been retraining as an IT
-        Specialist for System Integration (IHK) at Cimdata Bildungsakademie GmbH in Berlin. After
-        many years in hospitality — mostly in customer-facing roles — I bring what that work teaches:
-        clear communication, composure under pressure, and reliability in a team.
-      </p>
-      <p>
-        Technology has been with me for a long time, especially installing operating systems and
-        getting them to work with hardware and peripherals. Linux taught me how to bring older
-        machines back to life — it still feels like technology waking up again.
-      </p>
-      <p>
-        I'm currently doing my mandatory internship with the Linux team at Computer Manufaktur GmbH
-        in Berlin-Charlottenburg, turning theory into practice step by step, focused on networks,
-        servers, and careful troubleshooting. I've completed Linux Essentials (LPI); CompTIA
-        Network+ and the IHK exams are next.
-      </p>
-      <p>
-        At home I practise daily in my home lab: a small Proxmox cluster, monitoring with Checkmk,
-        my own DNS zone with BIND9, network-wide filtering with Pi-hole, and automation with
-        Ansible. I document every step — including the mistakes, because that's where I learn most.
-      </p>
+      <p>My name is Wilson Escobar Rodriguez. Since January 2025 I have been retraining as an IT Specialist for System Integration (IHK) at Cimdata Bildungsakademie GmbH in Berlin. After many years in hospitality — mostly in customer-facing roles — I bring what that work teaches: clear communication, composure under pressure, and reliability in a team.</p>
+      <p>Technology has been with me for a long time, especially installing operating systems and getting them to work with hardware and peripherals. Linux taught me how to bring older machines back to life — it still feels like technology waking up again.</p>
+      <p>I am currently completing my mandatory internship with the Linux team at Computer Manufaktur GmbH in Berlin-Charlottenburg, turning theory into practice step by step, focused on networks, servers, and careful troubleshooting. I have completed Linux Essentials (LPI); CompTIA Network+ and the IHK exams are next.</p>
+      <p>At home I practise daily in my home lab: a small Proxmox cluster, monitoring with Checkmk, my own DNS zone with BIND9, network-wide filtering with Pi-hole, and automation with Ansible. I document every step — including the mistakes, because that is where I learn most.</p>
     </div>
-  </section>
+  </div>
+
 </main>
 
 <footer class="shell foot">
   <span>© <span data-year></span> Wilson Escobar Rodriguez</span>
-  <span><a href="./index.html" style="color:inherit">← Zurück zur Startseite</a></span>
+  <a href="./index.html" style="color:inherit">← Startseite</a>
 </footer>
 
 <script src="./assets/js/script.js" defer></script>
