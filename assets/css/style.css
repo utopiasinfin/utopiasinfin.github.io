@@ -444,18 +444,14 @@ a{ color:inherit; }
 
 /* ---------- Profilseite ---------- */
 .profile{
-  display:grid;
-  grid-template-columns:auto minmax(0,1fr);
-  gap:clamp(1.5rem,1rem+2.5vw,3rem);
-  align-items:start;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:clamp(1.5rem,1rem+2vw,2.5rem);
   padding-block:clamp(2rem,1.5rem+3vw,4rem) 2rem;
 }
-@media (max-width:600px){
-  .profile{ grid-template-columns:1fr; }
-  .profile__photo{ width:140px; }
-}
 .profile__photo{
-  width:clamp(8rem,16vw,12rem); aspect-ratio:1; object-fit:cover;
+  width:clamp(8rem,14vw,11rem); aspect-ratio:1; object-fit:cover;
   border-radius:var(--r-lg); border:1px solid var(--line);
   box-shadow:var(--shadow); flex-shrink:0;
 }
