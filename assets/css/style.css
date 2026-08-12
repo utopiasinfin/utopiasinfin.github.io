@@ -86,6 +86,30 @@ body::after {
     radial-gradient(50rem 40rem at -5% 70%, var(--live-soft), transparent 60%);
 }
 
+/* Hintergrund: sehr feine, langsam rotierende geometrische Akzente (2026) */
+.bg-fx { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.bg-fx::before {
+  content: "";
+  position: absolute; top: 50%; left: 50%;
+  width: 130vmax; height: 130vmax;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(from 0deg,
+    transparent 0deg, var(--accent-soft) 35deg, transparent 95deg,
+    transparent 190deg, var(--live-soft) 235deg, transparent 300deg, transparent 360deg);
+  opacity: .55;
+  animation: bg-spin 160s linear infinite;
+  will-change: transform;
+}
+.bg-fx::after {
+  content: "";
+  position: absolute; top: -12vmax; right: -14vmax;
+  width: 46vmax; height: 46vmax;
+  border: 1px solid var(--border-soft);
+  border-radius: 26%;
+  transform: rotate(18deg);
+}
+@keyframes bg-spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
 a { color: inherit; text-decoration: none; }
 a:focus-visible, button:focus-visible {
   outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px;
@@ -145,6 +169,27 @@ a:focus-visible, button:focus-visible {
 }
 .sw-group button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
 @media (max-width: 780px) { .topnav, .clock { display: none; } }
+
+/* --- Language switch --- */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+.langswitch { display: flex; align-items: center; gap: .35rem; }
+.langswitch__item {
+  display: block; width: 24px; height: 17px; flex: none;
+  border-radius: 4px; overflow: hidden;
+  border: 1px solid var(--border);
+  opacity: .5; filter: saturate(.6);
+  transition: opacity .18s, filter .18s, transform .18s, border-color .18s, box-shadow .18s;
+}
+.langswitch__item svg { display: block; width: 100%; height: 100%; }
+.langswitch__item:hover { opacity: 1; filter: none; transform: translateY(-1px); border-color: var(--accent); }
+.langswitch__item[aria-current="true"] {
+  opacity: 1; filter: none; border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+  pointer-events: none; cursor: default;
+}
 
 /* --- Eyebrow --- */
 .eyebrow {
@@ -434,8 +479,6 @@ a:focus-visible, button:focus-visible {
 .profil-role { color: var(--fg-dim); margin: 0 0 1.4rem; font-size: .95rem; }
 .prose p { color: var(--fg-dim); margin: 0 0 1.1rem; line-height: 1.75; }
 .prose p:last-child { margin-bottom: 0; }
-[data-lang] { display: none; }
-[data-lang].on { display: block; }
 
 /* --- Scroll-Reveal --- */
 .rise { opacity: 0; transform: translateY(12px); }
